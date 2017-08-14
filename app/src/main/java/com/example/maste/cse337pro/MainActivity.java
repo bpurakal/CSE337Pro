@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 //can make a method
             }
         });
-
+  
         final Button button9=(Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
