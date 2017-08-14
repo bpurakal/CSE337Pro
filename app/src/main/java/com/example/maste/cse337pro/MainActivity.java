@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        setToggleAllButtons(false);
         //sets up the current player text view use setCurrentPlayer to change player with X or O
         currentPlayer = (TextView) findViewById(R.id.currentPlayer);
         //TODO set the current player
