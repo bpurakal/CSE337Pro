@@ -29,31 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //example button
- /*     //TODO use button.setText('-'); to set the text to a dash this can also be left blank
-        buttonEXMP=(Button) findViewById(R.id.button1);
-        buttonEXMP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buttonEXMP.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
-                placeMarkOnBoard( 0 , 0);
-                //Disable the buttone after cliacked
-                buttonEXMP.setEnabled(false);
-               //can make a method
-               if (Character.toUpperCase(mark) == 'X' ){
-                   setCurentPlayer('O');
-               }else{
-                   setCurentPlayer('X');
-               }
-               //TODO checkWinOrDraw in this method call
-
-
-            }
-        });*/
-
-
         final Button button1=(Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 0);
                 //Disable the buttone after cliacked
                 button1.setEnabled(false);
-                changeCurrentPlayer();
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -77,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 1);
                 //Disable the buttone after cliacked
                 button2.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -95,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 2);
                 //Disable the buttone after cliacked
                 button3.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -111,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 0);
                 //Disable the buttone after cliacked
                 button4.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -128,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 1);
                 //Disable the buttone after cliacked
                 button5.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -144,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 2);
                 //Disable the buttone after cliacked
                 button6.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -160,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 0);
                 //Disable the buttone after cliacked
                 button7.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -176,8 +138,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 1);
                 //Disable the buttone after cliacked
                 button8.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -192,8 +152,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 2);
                 //Disable the buttone after cliacked
                 button9.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -304,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             case 'D' :
                 setWinnerOrDraw(status);
             case 'N' :
-                return;
+                changeCurrentPlayer();
             default :
                 return;
         }
