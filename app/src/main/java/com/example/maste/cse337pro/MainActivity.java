@@ -2,6 +2,7 @@ package com.example.maste.cse337pro;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import edu.oakland.production.database.*;
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        final Button button5=(Button) findViewById(R.id.button6);
+        final Button button5=(Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button button6=(Button) findViewById(R.id.button5);
+        final Button button6=(Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -249,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void placeMarkOnBoard(int rowNumber, int columnNumber){
         //TODO add in the middleware and database class to the project.
+       // Log.d("plaecMark", rowNumber+" "+columnNumber);
         middleware.placeMarkOnBoard(Character.toUpperCase(this.mark),rowNumber ,columnNumber);
     }
 
@@ -293,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
 
         char status = middleware.checkForWinOrDraw();
         status = Character.toUpperCase(status);
+      //  currentPlayer.setText(status+"");
         switch(status) {
             case 'X' :
                 setWinnerOrDraw(status);
