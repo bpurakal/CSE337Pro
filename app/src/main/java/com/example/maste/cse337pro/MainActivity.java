@@ -186,9 +186,12 @@ public class MainActivity extends AppCompatActivity {
     //sets the current player pass in x or o
     //it does not matter it will capitalize it for you
     public void setCurentPlayer(char m){
-
-        this.mark = Character.toUpperCase(m);
-        currentPlayer.setText("Current Player "+mark);
+        char status = middleware.checkForWinOrDraw();
+        status = Character.toUpperCase(status);
+        if (status == 'N') {
+            this.mark = Character.toUpperCase(m);
+            currentPlayer.setText("Current Player " + mark);
+        }
 
     }
 
@@ -257,12 +260,17 @@ public class MainActivity extends AppCompatActivity {
         switch(status) {
             case 'X' :
                 setWinnerOrDraw(status);
+
+
             case 'O' :
                 setWinnerOrDraw(status);
+
             case 'D' :
                 setWinnerOrDraw(status);
+
             case 'N' :
                 changeCurrentPlayer();
+
             default :
                 return;
         }
