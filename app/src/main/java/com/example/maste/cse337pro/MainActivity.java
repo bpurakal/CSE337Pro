@@ -15,20 +15,7 @@ import edu.oakland.production.middleware.*;
 public class MainActivity extends AppCompatActivity {
 //this is only for display team
 
-    TextView currentPlayer;
-    private char mark;
-    //TODO the buttons should be stored as instance variables as they will need to be
-    //public Button buttonEXMP;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button8;
-    Button button9;
-    //TODO manipulated by other classes like winOrDraw
+
 
 //this is only for display team
 
@@ -47,31 +34,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        //example button
- /*     //TODO use button.setText('-'); to set the text to a dash this can also be left blank
-        buttonEXMP=(Button) findViewById(R.id.button1);
-        buttonEXMP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buttonEXMP.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
-                placeMarkOnBoard( 0 , 0);
-                //Disable the buttone after cliacked
-                buttonEXMP.setEnabled(false);
-               //can make a method
-               if (Character.toUpperCase(mark) == 'X' ){
-                   setCurentPlayer('O');
-               }else{
-                   setCurentPlayer('X');
-               }
-               //TODO checkWinOrDraw in this method call
-
-
-            }
-        });*/
-
 
         final Button button1=(Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -186,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         final Button button8=(Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
         //sets up the current player text view use setCurrentPlayer to change player with X or O
         currentPlayer = (TextView) findViewById(R.id.currentPlayer);
         //TODO set the current player
+        setToggleAllButtons(false);
 
     }
 
