@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        
+
         final Button button1=(Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,9 +134,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //displays the current win message in the currentPlayer text view
-    public void setWinner(char winner){
-        currentPlayer.setText(Character.toUpperCase(winner) +R.string.win_message);
+    //Sets the win or draw message on the currentPlayer text view
+    //pass in d or D for draw and X/x or O/o for win message
+    public void setWinnerOrDraw(char mark){
+        if(mark == 'D' || mark == 'd'){
+            currentPlayer.setText(R.string.draw_message);
+        }else {
+            currentPlayer.setText(Character.toUpperCase(mark) + R.string.win_message);
+        }
     }
 
     // row column 0-2 for the set mark use this to call the middleware
@@ -144,6 +149,13 @@ public class MainActivity extends AppCompatActivity {
     public void placeMarkOnBoard(int rowNumber, int columnNumber){
         //TODO add in the middleware and database class to the project.
         //middleware.placeMarkOnBoard(Character.toUpperCase(this.mark),rowNumber ,columnNumber);
+    }
+
+    // true toggles the all the buttons on or off
+    //true = on, false = off
+    public void setToggleAllButtons(boolean state){
+        //TODO toggle button logic
+        //buttonEXMP.setEnabled(state);
     }
 
 }

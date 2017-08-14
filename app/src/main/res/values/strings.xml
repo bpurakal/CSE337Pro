@@ -3,4 +3,5 @@
     <!--Added for display fields -->
     <string name="current_player_message">Active player is</string>
     <string name="win_message">is the Winner!!!</string>
+    <string name="draw_message">Draw!!!</string>
 </resources>
