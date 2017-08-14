@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 0);
                 //Disable the buttone after cliacked
                 button1.setEnabled(false);
-                changeCurrentPlayer();
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -58,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 1);
                 //Disable the buttone after cliacked
                 button2.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -76,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 0 , 2);
                 //Disable the buttone after cliacked
                 button3.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -92,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 0);
                 //Disable the buttone after cliacked
                 button4.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -109,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 1);
                 //Disable the buttone after cliacked
                 button5.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -125,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 1 , 2);
                 //Disable the buttone after cliacked
                 button6.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -141,8 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 0);
                 //Disable the buttone after cliacked
                 button7.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -158,13 +145,11 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 1);
                 //Disable the buttone after cliacked
                 button8.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
         });
-
+  
         final Button button9=(Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,8 +159,6 @@ public class MainActivity extends AppCompatActivity {
                 placeMarkOnBoard( 2 , 2);
                 //Disable the buttone after cliacked
                 button9.setEnabled(false);
-                changeCurrentPlayer();
-
                 checkForWinOrDraw();
                 //can make a method
             }
@@ -193,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        setToggleAllButtons(false);
         //sets up the current player text view use setCurrentPlayer to change player with X or O
         currentPlayer = (TextView) findViewById(R.id.currentPlayer);
         //TODO set the current player
@@ -211,9 +194,12 @@ public class MainActivity extends AppCompatActivity {
     //sets the current player pass in x or o
     //it does not matter it will capitalize it for you
     public void setCurentPlayer(char m){
-
-        this.mark = Character.toUpperCase(m);
-        currentPlayer.setText("Current Player "+mark);
+        char status = middleware.checkForWinOrDraw();
+        status = Character.toUpperCase(status);
+        if (status == 'N') {
+            this.mark = Character.toUpperCase(m);
+            currentPlayer.setText("Current Player " + mark);
+        }
 
     }
 
@@ -282,12 +268,17 @@ public class MainActivity extends AppCompatActivity {
         switch(status) {
             case 'X' :
                 setWinnerOrDraw(status);
+
+
             case 'O' :
                 setWinnerOrDraw(status);
+
             case 'D' :
                 setWinnerOrDraw(status);
+
             case 'N' :
-                return;
+                changeCurrentPlayer();
+
             default :
                 return;
         }
