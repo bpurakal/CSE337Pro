@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean draw = false;
     TextView currentPlayer;
     private char mark;
-    //TODO the buttons should be stored as instance variables as they will need to be
+
     public Button buttonEXMP;
-    //TODO manipulated by other classes like winOrDraw
+
 
 
     @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button1.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 0 , 0);
                 //Disable the buttone after cliacked
                 button1.setEnabled(false);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button2.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 0 , 1);
                 //Disable the buttone after cliacked
                 button2.setEnabled(false);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button3.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 0 , 2);
                 //Disable the buttone after cliacked
                 button3.setEnabled(false);
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button4.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 1 , 0);
                 //Disable the buttone after cliacked
                 button4.setEnabled(false);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button5.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 1 , 1);
                 //Disable the buttone after cliacked
                 button5.setEnabled(false);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button6.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 1 , 2);
                 //Disable the buttone after cliacked
                 button6.setEnabled(false);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button7.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 2 , 0);
                 //Disable the buttone after cliacked
                 button7.setEnabled(false);
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button8.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 2 , 1);
                 //Disable the buttone after cliacked
                 button8.setEnabled(false);
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 button9.setText(mark+"");
-                //TODO call placeMarkOnBoard(row,col); to set the mark
+
                 placeMarkOnBoard( 2 , 2);
                 //Disable the buttone after cliacked
                 button9.setEnabled(false);
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         setToggleAllButtons(false);
         //sets up the current player text view use setCurrentPlayer to change player with X or O
         currentPlayer = (TextView) findViewById(R.id.currentPlayer);
-        //TODO set the current player
+
         setToggleAllButtons(false);
 
     }
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
     // row column 0-2 for the set mark use this to call the middleware
 
     public void placeMarkOnBoard(int rowNumber, int columnNumber){
-        //TODO add in the middleware and database class to the project.
+        
        // Log.d("plaecMark", rowNumber+" "+columnNumber);
         middleware.placeMarkOnBoard(Character.toUpperCase(this.mark),rowNumber ,columnNumber);
     }
@@ -226,8 +226,7 @@ public class MainActivity extends AppCompatActivity {
     // true toggles the all the buttons on or off
     //true = on, false = off
     public void setToggleAllButtons(boolean state){
-        //TODO toggle button logic
-        //buttonEXMP.setEnabled(state);
+
         final Button button1=(Button) findViewById(R.id.button1);
         button1.setEnabled(state);
         button1.setText("");
